@@ -6,6 +6,8 @@ export const GifFinderApp = () => {
   const [categories, setCategories] = useState(['naruto']);
 
   const onAddCategory = (category: string) => {
+    if (categories.includes(category)) return;
+
     setCategories([category, ...categories]);
   };
 
