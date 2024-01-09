@@ -1,5 +1,6 @@
 import { GifGridItem } from './GifGridItem';
 import { useFetch } from '../hooks/useFetch';
+import { Loader } from './Loader';
 
 interface GifProps {
   category: string;
@@ -12,7 +13,7 @@ export const GifGrid = ({ category }: GifProps) => {
     <>
       <h2>{category}</h2>
       <div className="cards">
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <Loader />}
 
         {gifs.map((gif) => {
           return <GifGridItem key={gif.id} {...gif} />;
