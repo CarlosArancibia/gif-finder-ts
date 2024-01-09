@@ -13,13 +13,13 @@ export const GifFormSearch = ({ onAddCategory }: FormProps) => {
 
   const onSubmitForm = (event: FormEvent) => {
     event.preventDefault();
-
     onAddCategory(inputSearch);
+    setInputSearch('');
   };
 
   return (
     <form onSubmit={onSubmitForm}>
-      <input type="text" value={inputSearch} onChange={onInputChange} />
+      <input type="text" placeholder="Search gif" value={inputSearch} onChange={onInputChange} />
     </form>
   );
 };

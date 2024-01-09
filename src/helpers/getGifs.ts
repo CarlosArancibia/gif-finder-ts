@@ -1,6 +1,6 @@
 interface GifProps {
   id: string;
-  title: string;
+  title?: string;
   images: {
     downsized_medium: {
       url: string;
@@ -20,7 +20,7 @@ export const getGifs = async (category: string) => {
     const gifs = data.map(({ id, title, images }: GifProps) => {
       return {
         id,
-        title,
+        title: title ?? 'Unknown',
         url: images.downsized_medium.url,
       };
     });
